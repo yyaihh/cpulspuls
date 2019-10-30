@@ -19,6 +19,21 @@ void test() {
 	operator delete(p2);
 
 }
+void test1() {
+	int* MemPool = (int*)malloc(1024);
+	int* ptr[10];
+	int poffset = 0;
+	cout << "内存池地址:" << (int)MemPool << endl;
+	for (int i = 0; i < 10; ++i, ++poffset) {
+		ptr[i] = new(MemPool + poffset) int;
+		*(ptr[i]) = i + 1;
+	}
+	cout << "sizeof(int) = " << sizeof(int) << endl;
+	for (int i = 0; i < 10; ++i) {
+		cout << *ptr[i] << " 的地址是: " << (int)ptr[i] << endl;
+	}
+	free(MemPool);
+}
 int main() {
 	static int num3 = 3;
 	int num4 = 4;
@@ -35,7 +50,8 @@ int main() {
 	//free(ptr1);//不需要
 	free(ptr2);
 	free(ptr3);
-	test();
+	//test();
+	test1();
 	system("pause");
 	return 0;
 }
