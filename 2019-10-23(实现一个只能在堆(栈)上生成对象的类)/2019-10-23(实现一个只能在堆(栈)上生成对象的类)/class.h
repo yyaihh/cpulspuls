@@ -1,7 +1,12 @@
 #pragma once
-class T1 {
-	T1(int val = 0) :b(val) {
+using namespace std;
 
+class T1 {
+	T1(int val):b(val) {
+
+	}
+	T1(T1& x):b(x.b){
+		
 	}
 public:
 	int b;
