@@ -19,16 +19,15 @@ public:
 };
 class T2 {
 	~T2() {
-
+		delete this;
 	}
 public:
 	int b;
 	T2(int val = 0) :b(val) {
 
 	}
-	T2* Destroy() {
-		delete this;
-		return nullptr;
+	void Destroy() {
+		this->~T2();
 	}
 };
 class T3 {
