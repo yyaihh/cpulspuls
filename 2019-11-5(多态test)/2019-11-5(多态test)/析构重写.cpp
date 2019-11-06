@@ -13,7 +13,7 @@ public:
 	}
 };
 
-int main() {
+int main_() {
 	B* pb = new B;
 	A* pa = pb;
 	delete pa;
