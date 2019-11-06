@@ -166,6 +166,7 @@
   <ItemGroup>
     <ClCompile Include="test.cpp" />
     <ClCompile Include="协变.cpp" />
+    <ClCompile Include="多态的原理.cpp" />
     <ClCompile Include="析构重写.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
