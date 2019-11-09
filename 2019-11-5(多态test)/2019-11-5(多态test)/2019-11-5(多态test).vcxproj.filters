@@ -27,5 +27,8 @@
     <ClCompile Include="多态的原理.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="重载重写重定义.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

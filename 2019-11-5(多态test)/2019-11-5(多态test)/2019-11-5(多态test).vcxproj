@@ -168,6 +168,7 @@
     <ClCompile Include="协变.cpp" />
     <ClCompile Include="多态的原理.cpp" />
     <ClCompile Include="析构重写.cpp" />
+    <ClCompile Include="重载重写重定义.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
