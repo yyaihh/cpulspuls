@@ -11,6 +11,9 @@ bool strtoi(const char* str, int &num) {
 		flag = -1;
 		++str;
 	}
+	else if (*str == '+') {
+		++str;
+	}
 	if (*str > '9' || *str < '0') {
 		return false;
 	}
