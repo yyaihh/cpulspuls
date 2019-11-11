@@ -27,9 +27,10 @@ public:
 };
 int main() {
 	string s;
-	cin >> s;
 	Solution f;
-	cout << f.fun(s);
+	while (cin >> s) {
+		cout << f.fun(s);
+	}
 	system("pause");
 	return 0;
 }
