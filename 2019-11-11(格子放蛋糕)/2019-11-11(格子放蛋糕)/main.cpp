@@ -36,6 +36,55 @@ public:
 		}
 		return count;
 	}
+	int fun1(int W, int H) {
+		int i, j;
+		if (W >= 4) {
+			i = W % 4;
+		}
+		else {
+			i = 0;
+		}
+		if (H >= 4) {
+			j = H % 4;
+		}
+		else {
+
+		}
+		int _W = W + i;
+		int _H = H + j;
+		int count;
+		if (_W > _H) {
+			count = _H * _H;
+		}
+		else if(_W < _H){
+			count = _W * _W;
+		}
+		else {
+			count = _H * _W;
+		}
+		if (i != 0 || j != 0) { 
+			count -= (i * W / 2 + j * H / 2); 
+		}
+		else {
+			
+		}
+		if (i - j == 2 || j - i == 2) {//1,3
+			count += 2;
+		}
+		else if (i == 2 && j == j) {//2,2
+			count += 4;
+		}
+		else if (i == 1 && j == j) {//1,1
+			count += 1;
+		}
+		else if(i - j == 1 || j - i == 1) {//1,2
+			count += 2;
+		}
+		else {
+			count += 5;
+		}
+		return count;
+	}
 };
 int main() {
 	vector<vector<int>> v;
@@ -46,6 +95,7 @@ int main() {
 		v[i].resize(H, 0);
 	}
 	Solution f;
+	cout << f.fun1(W, H) << endl;
 	cout << f.fun(v);
 	system("pause");
 	return 0;
