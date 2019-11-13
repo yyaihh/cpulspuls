@@ -9,7 +9,7 @@ public:
 		int left = 0;
 		int right = 1;
 		int tmp;
-		while (num<left || num>right) {
+		while (num>right) {
 			tmp = right;
 			right += left;
 			left = tmp;
