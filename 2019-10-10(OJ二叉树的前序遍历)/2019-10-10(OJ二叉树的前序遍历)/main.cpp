@@ -24,7 +24,19 @@ public:
 	#if 1
 	vector<int> preorderTraversal(TreeNode* root) {
 		stack<TreeNode*> s;
-		do {
+		while (root) {
+			res.push_back(root->val);
+			if (root->right) s.push(root->right);
+			if (root->left) s.push(root->left);
+			if (s.empty()) {
+				root = nullptr;
+			}
+			else {
+				root = s.top();
+				s.pop();
+			}
+		}
+		/*do {
 			if (!s.empty()) {
 				root = s.top();
 				s.pop();
@@ -32,7 +44,7 @@ public:
 			res.push_back(root->val);
 			if (root->right) s.push(root->right);
 			if (root->left) s.push(root->left);
-		} while (!s.empty());
+		} while (!s.empty());*/
 		return res;
 	}
 	#else
