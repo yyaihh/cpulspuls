@@ -1,6 +1,5 @@
 #include<iostream>
-#include<vector>
-#include<stack>
+#include<string>
 using namespace std;
 class LCA {
 	void Swap(int& a, int&b) {
@@ -10,7 +9,7 @@ class LCA {
 		b = tmp;
 	}
 public:
-	int getLCA(int a, int b) {
+	int getLCA1(int a, int b) {
 		if (a < 1 || b < 1) {
 			return 0;
 		}
@@ -52,12 +51,32 @@ public:
 		}
 		return zu1;
 	}
+	int getLCA2(int a, int b) {
+		while (a != b) { 
+			a > b ? a /= 2 : b /= 2;
+		}
+		return a;
+	}
+	int getLCA3(int a, int b) {
+		int i, j, ancestor = 0;
+		for (i = 31; !((a >> i) & 1); --i);
+		for (j = 31; !((b >> j) & 1); --j);
+		if (i == 0 || j == 0) return 1;
+		for (; i >= 0 && j >= 0 && ((a >> i) & 1) == ((b >> j) & 1); --i, --j) {
+			ancestor <<= 1;
+			ancestor += ((a >> i) & 1);
+		}
+		char* p1 = (char*)&a;
+		return ancestor;
+	}
 };
 int main() {
 	LCA l;
 	int a, b;
 	while (cin >> a >> b) {
-		cout << l.getLCA(a, b)<< endl;
+		//cout << endl << l.getLCA1(a, b)<< endl;
+		//cout << l.getLCA2(a, b) << endl;
+		cout << l.getLCA3(a, b) << endl;
 	}
 	system("pause");
 	return 0;
