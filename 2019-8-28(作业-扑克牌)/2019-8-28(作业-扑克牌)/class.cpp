@@ -84,8 +84,7 @@ void Player::InsertSort() {
 	int i, j;
 	Poker tmp;
 
-	for (i = 1; i < 18; i++)
-	{
+	for (i = 1; i < 18; i++) {
 		tmp = a[i];
 
 		for (j = i; j > 0 && cmppoker(tmp, a[j - 1]); j--)
