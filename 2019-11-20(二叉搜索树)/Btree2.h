@@ -6,15 +6,17 @@
 //using namespace std;
 //template <class T>
 //class TreeNode {
-//public:
 //	T m_data;
 //	TreeNode<T>* m_left;
 //	TreeNode<T>* m_right;
+//public:
 //	TreeNode(const T& data = T())
 //		:m_data(data),
 //		m_left(nullptr),
 //		m_right(nullptr)
 //	{}
+//	template <class T>
+//	friend class Btree
 //};
 //template <class T>
 //class Btree {
@@ -51,6 +53,7 @@
 //				cur = cur->m_left;
 //			}
 //			else {
+//				delete newp;
 //				return false;
 //			}
 //		}//循环结束, 若没有重复节点, 则可以插入, pre就是需要插入位置的的父节点
