@@ -12,13 +12,16 @@ public:
 		}
 		int size1 = s1.size();
 		int size2 = s2.size();
-		int left = 0, len = 0;
-		for (int j = 0; j < size2; ++j) {
-			for (int k = 1; j + k < size2 && s1.find(s2.substr(j, k), 0) != string::npos; ++k) {
+		int left = 0, len = 0, k = 0;
+		for (int j = 0; j < size2&&size2-j>k; ++j) {
+			for (k = 1; j + k < size2 && s1.find(s2.substr(j, k), 0) != string::npos; ++k) {
 				if (k > len) {
 					len = k;
 					left = j;
 				}
+			}
+			if (k == len + 1 &&k + j == size2&& s1.find(s2.substr(j, k), 0) != string::npos) {
+				++len;
 			}
 		}
 		res = s2.substr(left, len);
